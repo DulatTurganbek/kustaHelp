@@ -158,7 +158,7 @@
                                 {{ $project->description }}
                             </p>
                             <div class="projects__item-button">
-                                <a class="projects__item-link page__btn" href="#?">
+                                <a class="projects__item-link page__btn" href="{{ route('show-project', ['id' => $project['id']]) }}">
                                     Пожертвовать
                                 </a>
                             </div>

@@ -9,7 +9,8 @@
                 <p class="foundation__text">
                     Задайте их нашему специалисту и получите ответ в течение 15 минут!
                 </p>
-                <form class="foundation__form">
+                <form class="foundation__form" action="{{ route('app-store') }}" method="POST">
+                    @csrf
                     <input class="foundation__form-name input-words" type="text" name="name" placeholder="Вашe имя">
                     <input class="foundation__form-phone input-phone" type="phone" name="phone" placeholder="Ваш телефон">
                     <input class="foundation__form-btn page__btn" type="submit" value="Задать вопрос">

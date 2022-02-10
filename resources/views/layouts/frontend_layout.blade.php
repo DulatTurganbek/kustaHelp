@@ -18,7 +18,7 @@
     <header class="header">
         <div class="container">
             <div class="header__inner">
-                <a class="header__logo" href="index.html">
+                <a class="header__logo" href="{{ route('home') }}">
                     <img src="/front/images/logo-header.svg" alt="">
                 </a>
                 <button class="burger">
@@ -54,7 +54,7 @@
                     </nav>
                     <div class="header__contacts">
                         <p class="header__contacts-phone">
-                            8 800 808-00-80
+                            87789477600
                         </p>
                         <a class="header__contacts-email" href="#?">
                             Kustohelp@gmail.com

@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\TeamController;
+use App\Http\Controllers\Frontend\ApplicationController;
 use App\Http\Controllers\Frontend\PagesController;
 use Illuminate\Support\Facades\Route;
 
@@ -47,10 +48,12 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
 
 //frontend
 
-Route::middleware(['auth'])->prefix('frontend')->group(function () {
-    Route::get('/', [PagesController::class,'index']);
+Route::middleware(['auth'])->prefix('/')->group(function () {
+    Route::get('/', [PagesController::class,'index'])->name('home');
     Route::get('/news/{id}', [PagesController::class,'showNews'])->name('show-news');
-//    Route::get('/news',[\App\Http\Controllers\Frontend\NewsController::class,'show']);
+    Route::get('/project/{id}', [PagesController::class,'showProject'])->name('show-project');
+    Route::post('/store',[ApplicationController::class,'store'])->name('app-store');
+//
 });
 
 
