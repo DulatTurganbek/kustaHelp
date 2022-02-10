@@ -16,4 +16,19 @@ class ApplicationController extends Controller
         return redirect()->back();
 
     }
+
+    public function index(){
+        $apps = App::orderBy('created_at','desc')->get();
+        return view('admin.application.index',[
+            'apps' => $apps
+        ]);
+
+
+    }
+
+    public function destroy(App $app){
+        $app->delete();
+        return redirect()->back()->withSuccess('Данные были успешно удалены');
+    }
+
 }

@@ -43,6 +43,8 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
     Route::resource('project', ProjectController::class);
     Route::resource('report', ReportController::class);
     Route::resource('contact', ContactController::class);
+    Route::get('application', [ApplicationController::class,'index'])->name('applications');
+    Route::post('application', [ApplicationController::class,'destroy'])->name('application-destroy');
 
 });
 
